@@ -1,0 +1,766 @@
+/*Tic Tac Toe Game version 3 with class*/
+
+#include<iostream.h>
+#include<conio.h>
+
+int i,multi_single,z=0,a;
+const int ROWS = 3;
+const int COLUMNS = 3;
+char board[ROWS][COLUMNS];
+
+void con();
+
+class results
+{
+   public:
+    void printmultix( )
+    {
+      cout<<"X Wins!!!!!!......:)"<<"O LOSSES!!....:(";
+    }
+    void printmultio( )
+    {
+      cout<<"O Wins!!!!!!......:)"<<"X LOOSES....:(";
+    }
+    void printsinglex( )
+    {
+      cout<<"\n You win!";
+    }
+    void printsingleo( )
+    {
+       cout<<"\n You loose!!";
+    }
+}obj;
+
+struct tic
+{
+   int q;
+   int p;
+   int r;
+   int s;
+   int t;
+   int u;
+   int v;
+   int w;
+   int x;
+}tac;
+
+int main()
+{
+   clrscr();
+   char n;
+   cout<<"Type 1 to play the game or 2 for tutorial:\n";
+   cin>>multi_single;
+   switch (multi_single)
+   {
+     case 1:{
+		cout<<"INSTRUCTIONS :-\n";
+		cout<<"\nYou have 9 columns to fill your X and O."<<"\n";
+		cout<<"The number of the column are:\n"<<"123\n456\n789\n";
+		cout<<"You can not choose a used number.\n";
+		cout<<"CAUTION =>\n!!!! If any one of you chosses a used number or \nif you chosse a number other than 1-9 your game will be over. !!!!";
+		cout<<"\nGame starts now\n";
+		cout<<"First chance is of O."<<"\n";
+		cout<<"type the number of the column where you want to put your O."<<"\n";
+		cin>>tac.p;
+		if(tac.p<=9)
+		{
+		  if(tac.p==0)
+		  {
+		    cout<<"\nYou choose a wrong no.\n Your game is over\n";
+		    break;
+		  }
+		  switch (tac.p)
+		  {
+		    case 1: board[0][0] = 'O';
+			    break;
+		    case 2: board[0][1] = 'O';
+			    break;
+		    case 3: board[0][2] = 'O';
+			    break;
+		    case 4: board[1][0] = 'O';
+			    break;
+		    case 5: board[1][1] = 'O';
+			    break;
+		    case 6: board[1][2] = 'O';
+			    break;
+		    case 7: board[2][0] = 'O';
+			    break;
+		    case 8: board[2][1] = 'O';
+			    break;
+		    case 9: board[2][2] = 'O';
+			    break;
+		    default:cout<<"Wrong choice.";
+			    break;
+		  }
+		  cout<<"\nYour O moves to your desired place."<<"\n";
+		  for (i=0;i<ROWS;++i)
+		  {
+		    for (int j=0;j<COLUMNS;++j)
+		    {
+		      cout<<board[i][j];
+		    }
+		    cout<<endl;
+		  }
+		  con();
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		cout<<"Now it is the chance of X."<<"\n";
+		cout<<"type the number of the column where you want to put your X."<<"\n";
+		cin>>tac.q;
+		if(tac.q<=9)
+		{
+		  if((tac.q==tac.p)||(tac.q==0))
+		  {
+		    cout<<"You chossed a wrong number.\nYour game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.q)
+		    {
+		      case 1: board[0][0] = 'X';
+			      break;
+		      case 2: board[0][1] = 'X';
+			      break;
+		      case 3: board[0][2] = 'X';
+			      break;
+		      case 4: board[1][0] = 'X';
+			      break;
+		      case 5: board[1][1] = 'X';
+			      break;
+		      case 6: board[1][2] = 'X';
+			      break;
+		      case 7: board[2][0] = 'X';
+			      break;
+		      case 8: board[2][1] = 'X';
+			       break;
+		      case 9: board[2][2] = 'X';
+			       break;
+		      default:cout<<"Wrong choice.";
+			       break;
+		    }
+		    cout<<"\nYour X moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice";
+		  break;
+		}
+		cout<<"\nChance is of O."<<"\n";
+		cout<<"type the number of the column where you want to put your O."<<"\n";
+		cin>>tac.r;
+		if(tac.r<=9)
+		{
+		  if((tac.r==tac.p)||(tac.r==tac.q)||(tac.r==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.r)
+		    {
+		      case 1: board[0][0] = 'O';
+			      break;
+		      case 2: board[0][1] = 'O';
+			      break;
+		      case 3: board[0][2] = 'O';
+			      break;
+		      case 4: board[1][0] = 'O';
+			      break;
+		      case 5: board[1][1] = 'O';
+			      break;
+		      case 6: board[1][2] = 'O';
+			      break;
+		      case 7: board[2][0] = 'O';
+			      break;
+		      case 8: board[2][1] = 'O';
+			      break;
+		      case 9: board[2][2] = 'O';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour O moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		cout<<"Chance of X."<<"\n";
+		cout<<"type the number of the column where you want to put your X."<<"\n";
+		cin>>tac.s;
+		if(tac.s<=9)
+		{
+		  if((tac.s==tac.p)||(tac.s==tac.q)||(tac.s==tac.r)||(tac.s==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.s)
+		    {
+		      case 1: board[0][0] = 'X';
+			      break;
+		      case 2: board[0][1] = 'X';
+			      break;
+		      case 3: board[0][2] = 'X';
+			      break;
+		      case 4: board[1][0] = 'X';
+			      break;
+		      case 5: board[1][1] = 'X';
+			      break;
+		      case 6: board[1][2] = 'X';
+			      break;
+		      case 7: board[2][0] = 'X';
+			      break;
+		      case 8: board[2][1] = 'X';
+			      break;
+		      case 9: board[2][2] = 'X';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour X moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		cout<<"\nChance is of O."<<"\n";
+		cout<<"type the number of the column where you want to put your O."<<"\n";
+		cin>>tac.t;
+		if(tac.t<=9)
+		{
+		  if((tac.t==tac.p)||(tac.t==tac.q)||(tac.t==tac.r)||(tac.t==tac.s)||(tac.t==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.t)
+		    {
+		      case 1: board[0][0] = 'O';
+			      break;
+		      case 2: board[0][1] = 'O';
+			      break;
+		      case 3: board[0][2] = 'O';
+			      break;
+		      case 4: board[1][0] = 'O';
+			      break;
+		      case 5: board[1][1] = 'O';
+			      break;
+		      case 6: board[1][2] = 'O';
+			      break;
+		      case 7: board[2][0] = 'O';
+			      break;
+		      case 8: board[2][1] = 'O';
+			      break;
+		      case 9: board[2][2] = 'O';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour O moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice";
+		  break;
+		}
+		cout<<"Chance of X."<<"\n";
+		cout<<"Type the number of the column where you want to put your X."<<"\n";
+		cin>>tac.u;
+		if(tac.u<=9)
+		{
+		  if((tac.u==tac.p)||(tac.u==tac.q)||(tac.u==tac.r)||(tac.u==tac.s)||(tac.u==tac.t)||(tac.u==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.u)
+		    {
+		      case 1: board[0][0] = 'X';
+			      break;
+		      case 2: board[0][1] = 'X';
+			      break;
+		      case 3: board[0][2] = 'X';
+			      break;
+		      case 4: board[1][0] = 'X';
+			      break;
+		      case 5: board[1][1] = 'X';
+			      break;
+		      case 6: board[1][2] = 'X';
+			      break;
+		      case 7: board[2][0] = 'X';
+			      break;
+		      case 8: board[2][1] = 'X';
+			      break;
+		      case 9: board[2][2] = 'X';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour X moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		cout<<"\nChance is of O."<<"\n";
+		cout<<"Type the number of the column where you want to put your O."<<"\n";
+		cin>>tac.v;
+		if(tac.v<=9)
+		{
+		  if((tac.v==tac.p)||(tac.v==tac.q)||(tac.v==tac.r)||(tac.v==tac.s)||(tac.v==tac.t)||(tac.v==tac.u)||(tac.v==0))
+		  {
+		    cout<<"You chosse wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.v)
+		    {
+		      case 1: board[0][0] = 'O';
+			      break;
+		      case 2: board[0][1] = 'O';
+			      break;
+		      case 3: board[0][2] = 'O';
+			      break;
+		      case 4: board[1][0] = 'O';
+			      break;
+		      case 5: board[1][1] = 'O';
+			      break;
+		      case 6: board[1][2] = 'O';
+			      break;
+		      case 7: board[2][0] = 'O';
+			      break;
+		      case 8: board[2][1] = 'O';
+			      break;
+		      case 9: board[2][2] = 'O';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour O moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		con();
+	       if(z==1)
+		{
+		  cout<<"Game Over /n";
+		  break;
+		}
+		cout<<"Chance of X."<<"\n";
+		cout<<"type the number of the column where you want to put your X."<<"\n";
+		cin>>tac.w;
+		if(tac.w<=9)
+		{
+		  if((tac.w==tac.p)||(tac.w==tac.q)||(tac.w==tac.r)||(tac.w==tac.s)||(tac.w==tac.t)||(tac.w==tac.u)||(tac.w==tac.v)||(tac.w==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.w)
+		    {
+		      case 1: board[0][0] = 'X';
+			      break;
+		      case 2: board[0][1] = 'X';
+			      break;
+		      case 3: board[0][2] = 'X';
+			      break;
+		      case 4: board[1][0] = 'X';
+			      break;
+		      case 5: board[1][1] = 'X';
+			      break;
+		      case 6: board[1][2] = 'X';
+			      break;
+		      case 7: board[2][0] = 'X';
+			      break;
+		      case 8: board[2][1] = 'X';
+			      break;
+		      case 9: board[2][2] = 'X';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour X moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		con();
+	       if(z==1)
+		{
+		  cout<<"game over";
+		  break;
+		}
+		cout<<"\nChance is of O."<<"\n";
+		cout<<"Cype the number of the column where you want to put your O."<<"\n";
+		cin>>tac.x;
+		if(tac.x<=9)
+		{
+		  if((tac.x==tac.p)||(tac.x==tac.q)||(tac.x==tac.r)||(tac.x==tac.s)||(tac.x==tac.t)||(tac.x==tac.u)||(tac.x==tac.v)||(tac.x==tac.w)||(tac.x==0))
+		  {
+		    cout<<"You chosse a wrong number.\n"<<"Your game is over.";
+		    break;
+		  }
+		  else
+		  {
+		    switch (tac.x)
+		    {
+		      case 1: board[0][0] = 'O';
+			      break;
+		      case 2: board[0][1] = 'O';
+			      break;
+		      case 3: board[0][2] = 'O';
+			      break;
+		      case 4: board[1][0] = 'O';
+			      break;
+		      case 5: board[1][1] = 'O';
+			      break;
+		      case 6: board[1][2] = 'O';
+			      break;
+		      case 7: board[2][0] = 'O';
+			      break;
+		      case 8: board[2][1] = 'O';
+			      break;
+		      case 9: board[2][2] = 'O';
+			      break;
+		      default:cout<<"Wrong choice.";
+			      break;
+		    }
+		    cout<<"\nYour O moves to your desired place."<<"\n";
+		    for (i=0;i<ROWS;++i)
+		    {
+		      for (int j=0;j<COLUMNS;++j)
+		      {
+			cout<<board[i][j];
+		      }
+		      cout<<endl;
+		    }
+		  }
+		}
+		else
+		{
+		  cout<<"Wrong choice.";
+		  break;
+		}
+		con();
+		if(z==1)
+		{
+		  cout<<"Game over";
+		  break;
+		}
+		if(z==0)
+		{
+		  cout<<"Its a tie, nobody wins.";
+		  break;
+		}
+
+		break;
+	    }
+     case 2:{   char board [ROWS][COLUMNS]={{'O','X','O'},
+					    {' ','X','X'},
+					    {'X','O','O'}};
+
+		cout<<"\n"<<"here's the tic tac toe board:\n";
+		for (i=0;i<ROWS;++i)
+		{
+		  for (int j=0;j<COLUMNS;++j)
+		  {
+		    cout<<board[i][j];
+		  }
+		  cout<<endl;
+		}
+		cout<<"choose a letter X or O";
+		cin>>n;
+		cout<<"\nYour choosed letter moves to the empty location.\n";
+		board[1][0] =n;
+		cout<<"Now the tic tac toe board is:\n";
+		for (i=0;i<ROWS;++i)
+		{
+		  for (int j=0;j<COLUMNS;++j)
+		  {
+		    cout<<board[i][j];
+		  }
+		  cout<<endl;
+		}
+		if(n=='X'||n=='x')
+		obj.printsinglex( );
+		else
+		{
+		  if(n=='O'||n=='o')
+		  obj.printsingleo( );
+		  else cout<<"\n You are a sucker. You choose the letter which was not given as a choice. \nYou loose with shame!!!!!";
+		}
+		break;
+	    }
+     default:cout<<"/n"<<"Wrong choice";
+	     break;
+   }
+   getch();
+   return 0;
+}
+
+void con()
+{
+  if(board[0][1]=='X')
+  {
+    if(board[1][1]=='X')
+    {
+      if(board[2][1]=='X')
+      {
+	obj.printmultix( );   //middle up x
+	z=1;
+      }
+    }
+  }
+  if(board[1][0]=='X')
+  {
+    if(board[1][1]=='X')
+    {
+      if(board[1][2]=='X')
+      {
+	obj.printmultix( );     //middle straighe x
+	z=1;
+      }
+    }
+  }
+  if(board[0][1]=='O')
+  {
+    if(board[1][1]=='O')
+    {
+      if(board[2][1]=='O')
+      {
+	obj.printmultio( );     //midle up o
+	z=1;
+      }
+    }
+  }
+  if(board[1][0]=='O')
+  {
+    if(board[1][1]=='O')
+    {
+      if(board[1][2]=='O')
+      {
+	obj.printmultio( );    //midle straight o
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='X')
+  {
+    if(board[0][1]=='X')
+    {
+      if(board[0][2]=='X')
+      {
+	obj.printmultix( );      //top str x
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='X')
+  {
+    if(board[1][0]=='X')
+    {
+      if(board[2][0]=='X')
+      {
+	obj.printmultix( );     //left up x
+	z=1;
+      }
+    }
+  }
+  if(board[0][2]=='X')
+  {
+    if(board[1][2]=='X')
+    {
+      if(board[2][2]=='X')
+      {
+	obj.printmultix( );     //right up x
+	z=1;
+       }
+     }
+  }
+  if(board[2][0]=='X')
+  {
+    if(board[2][1]=='X')
+    {
+      if(board[2][2]=='X')
+      {
+	obj.printmultix( );    //down str x
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='X')
+  {
+    if(board[1][1]=='X')
+    {
+      if(board[2][2]=='X')
+      {
+	obj.printmultix( );     // diagonal 1 x
+	z=1;
+      }
+    }
+  }
+  if(board[0][2]=='X')
+  {
+    if(board[1][1]=='X')
+    {
+      if(board[2][0]=='X')
+      {
+	obj.printmultix( );    //diagonal 2 x
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='O')
+  {
+    if(board[0][1]=='O')
+    {
+      if(board[0][2]=='O')
+      {
+	obj.printmultio( );     // top str o
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='O')
+  {
+    if(board[1][0]=='O')
+    {
+      if(board[2][0]=='O')
+      {
+	obj.printmultio( );     //  left up o
+	z=1;
+      }
+    }
+  }
+  if(board[0][2]=='O')
+  {
+    if(board[1][2]=='O')
+    {
+      if(board[2][2]=='O')
+      {
+	obj.printmultio( );     // right  up o
+	z=1;
+      }
+    }
+  }
+  if(board[2][0]=='O')
+  {
+    if(board[2][1]=='O')
+    {
+      if(board[2][2]=='O')
+      {
+	obj.printmultio( );    //  down str o
+	z=1;
+      }
+    }
+  }
+  if(board[0][0]=='O')
+  {
+    if(board[1][1]=='O')
+    {
+      if(board[2][2]=='O')
+      {
+	obj.printmultio( );    // diagonal 1 o
+	z=1;
+      }
+    }
+  }
+  if(board[0][2]=='O')
+  {
+    if(board[1][1]=='O')
+    {
+      if(board[2][0]=='O')
+      {
+	obj.printmultio( );    //  diagonal 2 o
+	z=1;
+      }
+    }
+  }
+}
